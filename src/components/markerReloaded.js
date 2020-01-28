@@ -7,7 +7,6 @@ import useMap from '../custom_hooks/useMap';
 import {updateSelectedPlace} from '../actions/mapActions';
 
 const MarkerReloaded = React.memo(({...props}) => {
-    console.log(props);
     const dispatch = useDispatch();
     const { callPlaceById, goToViewPort
       } = useMap();
@@ -22,7 +21,7 @@ const MarkerReloaded = React.memo(({...props}) => {
                 e.preventDefault();
                 dispatch(updateSelectedPlace(props.venue));
 
-                goToViewPort(props.venue.location.lat, props.venue.location.lng);
+                goToViewPort(props.venue.location.lat, props.venue.location.lng, console.log('fired'));
               }}>
             <img src={Locator} alt='locator' style={{width: '30px', height: '30px'}}
               onClick={id => callPlaceById(props.venue.id)}

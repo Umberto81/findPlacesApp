@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux'
 const useMap = () =>{
 
     const findeMeCoords = useSelector(state => state.findMeCoord);
+    console.log(findeMeCoords);
     const placeSelected = useSelector(state => state.place);
     const {latitude, longitude} = findeMeCoords;
 
@@ -16,7 +17,7 @@ const useMap = () =>{
     const [view, setview] = useState({
         latitude: 51.481583,
         longitude: -3.179090,
-        zoom: 12,
+        zoom: 16,
         transitionDuration: 1000    
 
     });

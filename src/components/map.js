@@ -38,7 +38,7 @@ const reduxSelectedPlace = useSelector(state => state.selectedPlace);
       <div style={{position: 'absolute', right: 0, margin: 10}}>
           <NavigationControl />
         </div>
-
+        {/* a react memo component is used because react Mapbox rerenders everytime a marker is created, a Geojson should be implemented here */}
         {places && places.map(place =>{
          
           return(
